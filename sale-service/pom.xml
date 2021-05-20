@@ -11,7 +11,7 @@
     <groupId>com.ptit</groupId>
     <artifactId>sale</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>gallery service</name>
+    <name>sale service</name>
     <description>Demo MSA project for Spring Boot with Eureka Client</description>
 
     <properties>
