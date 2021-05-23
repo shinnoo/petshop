@@ -12,7 +12,6 @@ import javax.persistence.Column;
 
 @Data
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Accessors(chain = true)
 public class OrderProductDto {
     private String id;

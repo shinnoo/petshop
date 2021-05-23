@@ -14,7 +14,6 @@ import java.util.List;
 
 @Data
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Accessors(chain = true)
 public class OrdersDto {
     private String id;

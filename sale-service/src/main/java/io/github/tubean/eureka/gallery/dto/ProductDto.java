@@ -11,7 +11,6 @@ import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Accessors(chain = true)
 public class ProductDto {
     private String id;

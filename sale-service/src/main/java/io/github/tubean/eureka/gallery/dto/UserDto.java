@@ -9,7 +9,6 @@ import lombok.experimental.Accessors;
 
 @Data
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
 @Accessors(chain = true)
 public class UserDto
 {
