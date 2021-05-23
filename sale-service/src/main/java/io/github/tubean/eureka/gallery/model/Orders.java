@@ -35,7 +35,7 @@ public class Orders {
     @Column(name = "create_at")
     private Instant createAt;
 
-    @Column(name = "status",columnDefinition = "nvarchar")
+    @Column(name = "status")
     private String status;
 
     @Column(name = "total_price")

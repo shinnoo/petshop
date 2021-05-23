@@ -29,10 +29,10 @@ public class Product implements Serializable {
     @Column(name = "id",unique = true,nullable = false)
     private String id;
 
-    @Column(name = "name",columnDefinition = "nvarchar",length = 1024)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "type",columnDefinition = "nvarchar")
+    @Column(name = "type")
     private String type;
 
     @Column(name = "img_url")
@@ -41,13 +41,10 @@ public class Product implements Serializable {
     @Column(name = "price")
     private Float price;
 
-    @Column(name = "code")
-    private String code;
-
     @Column(name = "total_quantity")
     private Float totalQuantity;
 
-    @Column(name = "description",columnDefinition = "nvarchar", length = 1024)
+    @Column(name = "description")
     private String description;
 
 }

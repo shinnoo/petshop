@@ -25,11 +25,10 @@ public class UserController
     @Autowired
     UserService userService;
     @PostMapping(value = "/users",produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<ResponseBodyDto<UserDto>> create(
+    public ResponseEntity<UserDto> create(
             @RequestBody UserRequest.Create request
     ){
         UserDto userDto= userService.create(request);
-        ResponseBodyDto<UserDto> res= new ResponseBodyDto<UserDto>(userDto, ResponseCodeEnum.R_201,"CREATED");
-        return ResponseEntity.status(HttpStatus.CREATED).body(res);
+        return ResponseEntity.status(HttpStatus.CREATED).body(userDto);
     }
 }

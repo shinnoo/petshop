@@ -7,7 +7,6 @@ import io.github.tubean.eureka.gallery.dto.OrderProductDto;
 import io.github.tubean.eureka.gallery.dto.mapper.CommonMapper;
 import io.github.tubean.eureka.gallery.model.OrderProduct;
 import io.github.tubean.eureka.gallery.model.Orders;
-import io.github.tubean.eureka.gallery.repository.OrderProductDetailRepository;
 import io.github.tubean.eureka.gallery.repository.OrderProductRepository;
 import io.github.tubean.eureka.gallery.repository.OrdersRepository;
 import io.github.tubean.eureka.gallery.service.OrderProductService;
@@ -30,8 +29,6 @@ public class OrderProductServiceImpl implements OrderProductService
     OrdersRepository ordersRepository;
     @Autowired
     OrderProductRepository orderProductRepository;
-    @Autowired
-    OrderProductDetailRepository orderProductDetailRepository;
 
     @Override
     public OrderProductDto create(OrdersRequest.Create request) {
@@ -39,19 +36,18 @@ public class OrderProductServiceImpl implements OrderProductService
     }
 
     @Override
-    public Page<OrderProductDto> getAllByOrderId(String orderId, Pageable pageable,
+    public List<OrderProductDto> getAllByOrderId(String orderId, Pageable pageable,
                                                  MultiValueMap<String, String> where) {
         Orders order = ordersRepository.findById(orderId).orElse(null);
         if (null == order) {
             throw new NotFoundException("Không tìm thấy đơn hàng");
         }
-        ResultPage<OrderProduct> resultPage = orderProductDetailRepository.getAllWithFilter(orderId, pageable, where);
-        Long total = resultPage.getTotalItems();
+        List<OrderProduct> orderProducts = orderProductRepository.findAllByOrderId(orderId, pageable);
         List<OrderProductDto> orderProductDtos = new ArrayList<>();
-        for (OrderProduct orderProduct : resultPage.getPageList()){
+        for (OrderProduct orderProduct : orderProducts){
             orderProductDtos.add(CommonMapper.map(orderProduct,OrderProductDto.class));
         }
-        return new PageImpl<>(orderProductDtos, pageable, total);
+        return orderProductDtos;
     }
 
 }

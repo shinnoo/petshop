@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/v1")
 public class OrderProductController {
@@ -24,11 +26,9 @@ public class OrderProductController {
     private OrderProductService orderProductService;
 
     @GetMapping(value = "/orders/{order-id}/order-products", produces = "application/json")
-    public ResponseEntity<ResponseBodyDto<OrderProductDto>> getAll(Pageable pageable,
+    public ResponseEntity<List<OrderProductDto>> getAll(Pageable pageable,
                                                                    @RequestParam MultiValueMap<String, String> where, @PathVariable("order-id") String orderId) {
-        Page<OrderProductDto> page = orderProductService.getAllByOrderId(orderId, pageable, where);
-        ResponseBodyDto<OrderProductDto> response = new ResponseBodyDto<OrderProductDto>(pageable, page,
-                ResponseCodeEnum.R_200, "OK");
-        return ResponseEntity.status(HttpStatus.OK).body(response);
+        List<OrderProductDto> page = orderProductService.getAllByOrderId(orderId, pageable, where);
+        return ResponseEntity.status(HttpStatus.OK).body(page);
     }
 }

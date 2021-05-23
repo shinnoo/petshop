@@ -15,7 +15,6 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 @Accessors(chain = true)
 public class OrdersDto {
     private String id;

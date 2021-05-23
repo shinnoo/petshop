@@ -26,13 +26,13 @@ public class User implements Serializable {
     @Column(name = "id",unique = true,nullable = false)
     private String id;
 
-    @Column(name = "name",columnDefinition = "nvarchar",length = 1024)
+    @Column(name = "name")
     private String name;
 
     @Column(name = "email")
     private String email;
 
-    @Column(name = "local",columnDefinition = "nvarchar",length = 2048)
+    @Column(name = "local")
     private String local;
 
     @Column(name = "phone")

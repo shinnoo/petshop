@@ -12,14 +12,11 @@ import java.math.BigDecimal;
 @Data
 @NoArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 @Accessors(chain = true)
 public class ProductDto {
     private String id;
 
     private String name;
-
-    private String type;
 
     private String imgUrl;
 

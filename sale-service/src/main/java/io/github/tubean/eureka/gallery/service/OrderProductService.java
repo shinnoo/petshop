@@ -7,9 +7,11 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.MultiValueMap;
 
+import java.util.List;
+
 public interface OrderProductService {
     OrderProductDto create(OrdersRequest.Create request);
 
-    Page<OrderProductDto> getAllByOrderId(String orderId, Pageable pageable, MultiValueMap<String, String> where);
+    List<OrderProductDto> getAllByOrderId(String orderId, Pageable pageable, MultiValueMap<String, String> where);
 
 }

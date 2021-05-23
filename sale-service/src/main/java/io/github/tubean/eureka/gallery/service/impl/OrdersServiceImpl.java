@@ -80,6 +80,10 @@ public class OrdersServiceImpl implements OrdersService {
         return null;
     }
 
+    @Override
+    public List<Orders> getAllByUserId(String userId) {
+        return ordersRepository.findAllByUserId(userId);
+    }
 
 
 }
