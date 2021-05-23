@@ -44,7 +44,6 @@ public class ResponseBodyDto<E> {
      * Reset API: Response total items for pagination
      */
 
-    @JsonProperty("total_items")
     private long totalItems;
 
     /**

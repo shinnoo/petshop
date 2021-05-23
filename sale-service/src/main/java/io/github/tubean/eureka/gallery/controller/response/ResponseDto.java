@@ -14,22 +14,17 @@ public class ResponseDto<E> {
 
     private String message;
 
-    @JsonProperty("total_items")
     private long totalItems;
 
-    @JsonProperty("size")
     private int size;
 
-    @JsonProperty("page")
     private int page;
 
     /**
      * Reset API: Response data of 1 item
      */
-    @JsonProperty("item")
     private E item;
 
-    @JsonProperty("items")
     private List<E> items;
 
 }
