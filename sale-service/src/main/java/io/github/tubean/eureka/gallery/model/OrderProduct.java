@@ -33,10 +33,10 @@ public class OrderProduct {
     private String productId;
 
     @Column(name = "quantity")
-    private Float quantity;
+    private Integer quantity;
 
     @Column(name = "unit_price")
-    private Float unitPrice;
+    private Long unitPrice;
 
     @Column(name = "product_name")
     private String productName;

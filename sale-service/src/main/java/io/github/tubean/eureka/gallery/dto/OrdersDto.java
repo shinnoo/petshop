@@ -21,20 +21,11 @@ public class OrdersDto {
 
     private String status;
 
-    private BigDecimal totalPrice;
+    private Long totalPrice;
 
     private String userId;
 
     private Instant createAt;
-
-    @JsonGetter("create_at")
-    public Object getCreateAt(){
-        try {
-            return createAt.getEpochSecond();
-        }catch (Exception e){
-            return  null;
-        }
-    }
 
     private List<OrderProductDto> orderProductDtos;
 }

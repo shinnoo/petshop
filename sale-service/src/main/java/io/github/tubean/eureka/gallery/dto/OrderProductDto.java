@@ -18,7 +18,7 @@ public class OrderProductDto {
     private String id;
     private String orderId;
     private String productId;
-    private Float quantity;
-    private Float unitPrice;
+    private Integer quantity;
+    private Long unitPrice;
     private String productName;
 }

@@ -39,5 +39,5 @@ public class Orders {
     private String status;
 
     @Column(name = "total_price")
-    private BigDecimal totalPrice;
+    private Long totalPrice;
 }

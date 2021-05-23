@@ -39,10 +39,10 @@ public class Product implements Serializable {
     private String imgUrl;
 
     @Column(name = "price")
-    private Float price;
+    private Long price;
 
     @Column(name = "total_quantity")
-    private Float totalQuantity;
+    private Integer totalQuantity;
 
     @Column(name = "description")
     private String description;

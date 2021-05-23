@@ -22,9 +22,9 @@ public class ProductDto {
 
     private String type;
 
-    private Float price;
+    private Long price;
 
-    private Float totalQuantity;
+    private Integer totalQuantity;
 
     private String description;
 }
