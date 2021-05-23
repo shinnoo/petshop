@@ -12,17 +12,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.io.Serializable;
-import java.math.BigDecimal;
 
 @Data
-@Table(name = "product")
+@Table(name = "users")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Product implements Serializable {
-    private static final long serialVersionUID = 1L;
-
+public class User implements Serializable {
     @Id
     @GeneratedValue(generator = "uuid")
     @GenericGenerator(name = "uuid", strategy = "uuid")
@@ -32,22 +29,12 @@ public class Product implements Serializable {
     @Column(name = "name",columnDefinition = "nvarchar",length = 1024)
     private String name;
 
-    @Column(name = "type",columnDefinition = "nvarchar")
-    private String type;
+    @Column(name = "email")
+    private String email;
 
-    @Column(name = "img_url")
-    private String imgUrl;
+    @Column(name = "local",columnDefinition = "nvarchar",length = 2048)
+    private String local;
 
-    @Column(name = "price")
-    private Float price;
-
-    @Column(name = "code")
-    private String code;
-
-    @Column(name = "total_quantity")
-    private Float totalQuantity;
-
-    @Column(name = "description",columnDefinition = "nvarchar", length = 1024)
-    private String description;
-
+    @Column(name = "phone")
+    private String phone;
 }

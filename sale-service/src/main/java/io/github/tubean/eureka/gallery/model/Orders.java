@@ -11,16 +11,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
 import java.math.BigDecimal;
+import java.time.Instant;
 
 @Data
-@Table(name = "product")
+@Table(name = "orders")
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Accessors(chain = true)
-public class Product implements Serializable {
+public class Orders {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -29,25 +29,15 @@ public class Product implements Serializable {
     @Column(name = "id",unique = true,nullable = false)
     private String id;
 
-    @Column(name = "name",columnDefinition = "nvarchar",length = 1024)
-    private String name;
+    @Column(name = "user_id")
+    private String userId;
 
-    @Column(name = "type",columnDefinition = "nvarchar")
-    private String type;
+    @Column(name = "create_at")
+    private Instant createAt;
 
-    @Column(name = "img_url")
-    private String imgUrl;
+    @Column(name = "status",columnDefinition = "nvarchar")
+    private String status;
 
-    @Column(name = "price")
-    private Float price;
-
-    @Column(name = "code")
-    private String code;
-
-    @Column(name = "total_quantity")
-    private Float totalQuantity;
-
-    @Column(name = "description",columnDefinition = "nvarchar", length = 1024)
-    private String description;
-
+    @Column(name = "total_price")
+    private BigDecimal totalPrice;
 }
