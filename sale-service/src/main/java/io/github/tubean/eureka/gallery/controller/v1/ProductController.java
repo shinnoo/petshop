@@ -4,6 +4,8 @@ import io.github.tubean.eureka.gallery.common.enums.ResponseCodeEnum;
 import io.github.tubean.eureka.gallery.controller.request.ProductRequest;
 import io.github.tubean.eureka.gallery.controller.response.ResponseBodyDto;
 import io.github.tubean.eureka.gallery.dto.ProductDto;
+import io.github.tubean.eureka.gallery.model.Product;
+import io.github.tubean.eureka.gallery.repository.ProductRepository;
 import io.github.tubean.eureka.gallery.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -30,6 +32,10 @@ import java.util.List;
 public class ProductController {
     @Autowired
     ProductService productService;
+
+
+    @Autowired
+    ProductRepository productRepository;
     @GetMapping(value = "/products", produces = "application/json")
     public ResponseEntity<List<ProductDto>> getAll(Pageable pageable,
                                                               @RequestParam MultiValueMap<String, String> queryParams) {
@@ -53,5 +59,11 @@ public class ProductController {
     ){
         ProductDto productDto= productService.update(productId,request);
         return ResponseEntity.status(HttpStatus.OK).body(productDto);
+    }
+
+    @GetMapping(value = "/products/{id}", produces = "application/json")
+    public ResponseEntity<Product> getAll(@PathVariable String id) {
+        Product product = productRepository.findById(id).get();
+        return new ResponseEntity<>(product, HttpStatus.OK);
     }
 }

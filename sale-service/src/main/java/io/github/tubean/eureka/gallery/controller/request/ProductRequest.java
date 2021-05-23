@@ -10,7 +10,6 @@ import java.math.BigDecimal;
 
 public class ProductRequest {
     @Data
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     @Accessors(chain = true)
     public static class Create{
         @NotNull(message = "name can not be null")
@@ -34,7 +33,6 @@ public class ProductRequest {
     }
     //
     @Data
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     @Accessors(chain = true)
     public static class Update{
         private String name;

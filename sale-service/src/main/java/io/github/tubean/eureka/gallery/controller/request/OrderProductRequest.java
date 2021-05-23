@@ -10,27 +10,22 @@ import java.math.BigDecimal;
 
 public class OrderProductRequest {
     @Data
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     @Accessors(chain = true)
     public static class Create{
-        @NotNull(message = "order_id can not be null")
-        private String orderId;
-
         @NotNull(message = "product_id can not be null")
         private String productId;
 
         @NotNull(message = "quantity can not be null")
         private Float quantity;
 
-        @NotNull(message = "sum_price can not be null")
-        private Float sumPrice;
+        @NotNull(message = "unit_price can not be null")
+        private Float unitPrice;
 
-        private Float discount;
+        private String productName;
 
     }
     //
     @Data
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     @Accessors(chain = true)
     public static class Update{
         private String orderId;

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Column;
 
 
 @Data
@@ -15,12 +16,9 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 public class OrderProductDto {
     private String id;
-
     private String orderId;
-
     private String productId;
-
     private Float quantity;
-
-    private ProductDto productDto;
+    private Float unitPrice;
+    private String productName;
 }

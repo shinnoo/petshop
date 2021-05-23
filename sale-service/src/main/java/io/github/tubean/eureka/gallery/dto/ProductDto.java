@@ -20,9 +20,11 @@ public class ProductDto {
 
     private String imgUrl;
 
-    private String code;
+    private String type;
 
     private Float price;
 
     private Float totalQuantity;
+
+    private String description;
 }

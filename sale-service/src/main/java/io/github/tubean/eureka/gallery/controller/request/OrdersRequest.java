@@ -14,17 +14,13 @@ import java.util.List;
 
 public class OrdersRequest {
     @Data
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     @Accessors(chain = true)
     public static class Create{
         @NotNull(message = "user_id can not be null")
         private String userId;
 
-        @NotNull(message = "status can not be null")
-        private String status;
-
         @NotNull(message = "total_price can not be null")
-        private BigDecimal totalPrice;
+        private Float totalPrice;
 
         @Valid
         private List<OrderProductRequest.Create> orderProducts;
@@ -32,7 +28,6 @@ public class OrdersRequest {
     }
     //
     @Data
-    @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
     @Accessors(chain = true)
     public static class Update{
         private String userId;

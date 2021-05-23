@@ -34,11 +34,11 @@ public class OrderProduct {
 
     @Column(name = "quantity")
     private Float quantity;
-    @Column(name = "sum_price")
-    @NotNull
-    private Float sumPrice;
 
-    @Column(name = "discount")
-    private Float discount;
+    @Column(name = "unit_price")
+    private Float unitPrice;
+
+    @Column(name = "product_name")
+    private String productName;
 
 }
