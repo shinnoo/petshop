@@ -40,7 +40,7 @@ public class OrdersController
         return new ResponseEntity<>(orderDto, HttpStatus.CREATED);
     }
 
-    @GetMapping(value = "/orders/users/{user-id}", produces = "application/json")
+    @GetMapping(value = "/orders/users/{user-id}")
     public ResponseEntity<List<Orders>> getAllByUserId(@PathVariable("user-id") String userId){
         List<Orders> orderDto = ordersService.getAllByUserId(userId);
         return new ResponseEntity<>(orderDto, HttpStatus.OK);

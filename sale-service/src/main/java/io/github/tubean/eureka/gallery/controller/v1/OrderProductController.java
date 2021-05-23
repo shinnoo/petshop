@@ -25,7 +25,7 @@ public class OrderProductController {
     @Autowired
     private OrderProductService orderProductService;
 
-    @GetMapping(value = "/orders/{order-id}/order-products", produces = "application/json")
+    @GetMapping(value = "/orders/{order-id}/order-products")
     public ResponseEntity<List<OrderProductDto>> getAll(Pageable pageable,
                                                                    @RequestParam MultiValueMap<String, String> where, @PathVariable("order-id") String orderId) {
         List<OrderProductDto> page = orderProductService.getAllByOrderId(orderId, pageable, where);

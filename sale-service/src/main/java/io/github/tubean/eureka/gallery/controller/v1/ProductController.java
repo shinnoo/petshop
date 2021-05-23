@@ -36,7 +36,7 @@ public class ProductController {
 
     @Autowired
     ProductRepository productRepository;
-    @GetMapping(value = "/products", produces = "application/json")
+    @GetMapping(value = "/products")
     public ResponseEntity<List<ProductDto>> getAll(Pageable pageable,
                                                               @RequestParam MultiValueMap<String, String> queryParams) {
         List<ProductDto> resultPageDto = productService.getAll(pageable, queryParams);
@@ -61,7 +61,7 @@ public class ProductController {
         return ResponseEntity.status(HttpStatus.OK).body(productDto);
     }
 
-    @GetMapping(value = "/products/{id}", produces = "application/json")
+    @GetMapping(value = "/products/{id}")
     public ResponseEntity<Product> getAll(@PathVariable String id) {
         Product product = productRepository.findById(id).get();
         return new ResponseEntity<>(product, HttpStatus.OK);
