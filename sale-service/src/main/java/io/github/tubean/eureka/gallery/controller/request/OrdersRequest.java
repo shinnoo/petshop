@@ -20,7 +20,7 @@ public class OrdersRequest {
         private String userId;
 
         @NotNull(message = "total_price can not be null")
-        private Float totalPrice;
+        private Long totalPrice;
 
         @Valid
         private List<OrderProductRequest.Create> orderProducts;
@@ -34,6 +34,6 @@ public class OrdersRequest {
 
         private String status;
 
-        private BigDecimal totalPrice;
+        private Long totalPrice;
     }
 }

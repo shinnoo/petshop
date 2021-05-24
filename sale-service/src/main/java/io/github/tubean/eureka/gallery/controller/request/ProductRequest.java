@@ -25,10 +25,10 @@ public class ProductRequest {
         private String code;
 
         @NotNull(message = "total_quantity can not be null")
-        private Float totalQuantity;
+        private Integer totalQuantity;
 
         @NotNull(message = "price can not be null")
-        private Float price;
+        private Long price;
 
     }
     //
@@ -43,9 +43,9 @@ public class ProductRequest {
 
         private String code;
 
-        private Float totalQuantity;
+        private Integer totalQuantity;
 
-        private Float price;
+        private Long price;
     }
 
 }

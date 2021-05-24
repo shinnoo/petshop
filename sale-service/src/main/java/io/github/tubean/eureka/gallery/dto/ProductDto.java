@@ -26,4 +26,6 @@ public class ProductDto {
     private Integer totalQuantity;
 
     private String description;
+
+    private Integer age;
 }

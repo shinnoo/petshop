@@ -47,4 +47,7 @@ public class Product implements Serializable {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "age")
+    private Integer age;
+
 }

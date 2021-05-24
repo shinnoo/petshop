@@ -16,10 +16,10 @@ public class OrderProductRequest {
         private String productId;
 
         @NotNull(message = "quantity can not be null")
-        private Float quantity;
+        private Integer quantity;
 
         @NotNull(message = "unit_price can not be null")
-        private Float unitPrice;
+        private Long unitPrice;
 
         private String productName;
 
@@ -32,6 +32,6 @@ public class OrderProductRequest {
 
         private String productId;
 
-        private BigDecimal quantity;
+        private Integer quantity;
     }
 }
