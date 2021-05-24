@@ -50,4 +50,13 @@ public class Product implements Serializable {
     @Column(name = "age")
     private Integer age;
 
+    @Column(name = "weight")
+    private Integer weight;
+
+    @Column(name = "sex")
+    private String sex;
+
+    @Column(name = "color")
+    private String color;
+
 }

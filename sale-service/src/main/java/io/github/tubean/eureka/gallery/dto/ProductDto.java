@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+import javax.persistence.Column;
 import java.math.BigDecimal;
 
 @Data
@@ -28,4 +29,8 @@ public class ProductDto {
     private String description;
 
     private Integer age;
+
+    private Integer weight;
+    private String sex;
+    private String color;
 }
