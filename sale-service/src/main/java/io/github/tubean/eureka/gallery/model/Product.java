@@ -41,9 +41,6 @@ public class Product implements Serializable {
     @Column(name = "price")
     private Long price;
 
-    @Column(name = "total_quantity")
-    private Integer totalQuantity;
-
     @Column(name = "description")
     private String description;
 

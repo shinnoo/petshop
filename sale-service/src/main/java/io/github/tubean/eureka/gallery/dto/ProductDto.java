@@ -24,8 +24,6 @@ public class ProductDto {
 
     private Long price;
 
-    private Integer totalQuantity;
-
     private String description;
 
     private Integer age;
