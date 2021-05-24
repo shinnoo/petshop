@@ -31,4 +31,5 @@ public class ProductDto {
     private Integer weight;
     private String sex;
     private String color;
+    private String species;
 }

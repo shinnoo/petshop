@@ -56,4 +56,7 @@ public class Product implements Serializable {
     @Column(name = "color")
     private String color;
 
+    @Column(name = "species")
+    private String species;
+
 }
