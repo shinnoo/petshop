@@ -26,5 +26,5 @@ public class OrdersDto {
 
     private Instant createAt;
 
-    private List<OrderProductDto> orderProductDtos;
+    private List<OrderProductDto> orderProducts;
 }
