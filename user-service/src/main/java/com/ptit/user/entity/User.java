@@ -20,13 +20,13 @@ public class User {
     private String id;
 
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "email", nullable = false)
+    @Column(name = "email")
     private String email;
     
-    @Column(name = "address", nullable = false)
+    @Column(name = "address")
     private String address;
 
     public String getId() {
