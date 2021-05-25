@@ -45,7 +45,7 @@ public class OrdersServiceImpl implements OrdersService {
         orderProducts.forEach(i -> i.setOrderId(ordersDto.getId()));
         orderProducts = orderProductRepository.saveAll(orderProducts);
         List<OrderProductDto> orderProductDtos = CommonMapper.toList(orderProducts,OrderProductDto.class);
-        return ordersDto.setOrderProductDtos(orderProductDtos);
+        return ordersDto.setOrderProducts(orderProductDtos);
     }
 
     @Override
