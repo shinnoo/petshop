@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.filter.ForwardedHeaderFilter;
 
 @SpringBootApplication
 @EnableEurekaClient        // It acts as a eureka client
@@ -16,10 +15,6 @@ public class ZuulServerApplication {
         SpringApplication.run(ZuulServerApplication.class, args);
     }
 
-    @Bean
-    ForwardedHeaderFilter forwardedHeaderFilter() {
-        return new ForwardedHeaderFilter();
-    }
 
 }
 
